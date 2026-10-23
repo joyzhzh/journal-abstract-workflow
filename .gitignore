@@ -3,6 +3,9 @@
 /raw/
 /data/
 /logs/
+/.history/
+/run_manifest.json
+/run_state.json*
 /.local/
 /.venv/
 __pycache__/

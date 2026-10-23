@@ -56,8 +56,10 @@ load `.env` files automatically. Consult [sources and service access](docs/SOURC
 for the current provider instructions. API access and quotas vary; the tools do not
 promise unlimited or complete retrieval.
 
-If a request fails, rerun the same command to reuse completed source downloads. To
-rebuild from saved responses without network access:
+If a request fails, rerun the same command to reuse completed source downloads.
+The runner restores the previous completed tables and manifest after a failed
+attempt, retaining the attempt and prior snapshot under `.history/`. To rebuild
+from saved responses without network access:
 
 ```sh
 python3 scripts/pipeline.py --output runs/my-corpus --offline organization-science
@@ -66,11 +68,15 @@ python3 scripts/pipeline.py --output runs/my-corpus --offline organization-scien
 A failed Crossref ISSN download restarts that ISSN in a separate snapshot; completed
 ISSNs are reused. OpenAlex saves progress every 25 lookups and on normal interruption,
 so an abrupt process kill may repeat a few requests. Semantic Scholar checkpoints
-each successful batch. Earlier attempt files remain available for inspection.
+each successful batch. Provider error objects and malformed saved responses are
+retryable failures, not evidence that an article has no abstract. Repairs retain
+the original cache bytes. Earlier attempt files remain available for inspection.
 
 To include a reference table, add `--references` to either command. Crossref reference
 lists are preferred, with OpenAlex work IDs used where Crossref has no list.
-Reference coverage is distinct from abstract coverage.
+Once a reference table exists, later runs rebuild it even without that switch,
+so changed duplicate decisions are reflected. Reference coverage is distinct
+from abstract coverage.
 
 Use a **new output directory for a new dated snapshot**. Reusing a directory reuses
 saved responses; it is not a refresh of the latest API state. Keep one pipeline
@@ -121,6 +127,13 @@ All paths below are inside the output directory you choose.
 | `data/<journal>/references.csv.gz` | Optional reference rows; not a complete or deduplicated citation graph |
 | `raw/` | Saved provider responses for offline rebuilding |
 | `data/journals_crossref.csv.gz` | Combined final rows from journals in the output directory |
+| `run_manifest.json` | Requested and combined journal sets, registry, review, tool, input and output hashes |
+| `run_state.json` and `.history/` | Run status and retained recovery snapshots |
+
+The combined table includes previously collected journals in that output directory;
+the manifest records all of them. Keep their registry entries when using a custom
+registry, or choose a separate output directory. The runner stops if an existing
+journal would be silently omitted.
 
 `kind_guess` is a title-based heuristic, not a publisher classification. A nonempty
 abstract field may still be incomplete or wrong. A missing field may reflect a
@@ -158,3 +171,5 @@ are in [sources and credits](docs/SOURCES.md).
 
 Files and commit authors are anonymized; the GitHub owner remains visible.
 See [privacy boundaries](docs/PRIVACY.md) and [release status](docs/RELEASE.md).
+The [independent review](docs/INDEPENDENT_REVIEW.md) records tested failures, fixes,
+and the full saved-response replay.

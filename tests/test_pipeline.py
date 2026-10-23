@@ -38,7 +38,7 @@ class PipelineTests(unittest.TestCase):
         return folder, registry
 
     def run_offline(self, root, registry):
-        with patch("urllib.request.urlopen", side_effect=AssertionError("offline attempted network")), contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+        with patch.object(common._opener, "open", side_effect=AssertionError("offline attempted network")), contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
             pipeline.run(root, [demo.SLUG], registry, offline=True, references=True)
 
     def test_all_stages_offline_source_priority_reviews_and_replay(self):
@@ -82,7 +82,7 @@ class PipelineTests(unittest.TestCase):
 
     def test_unknown_slug_fails_without_network_or_outputs(self):
         root, registry = self.fixture()
-        with patch("urllib.request.urlopen", side_effect=AssertionError("unexpected network")), self.assertRaisesRegex(ValueError, "unknown journal"):
+        with patch.object(common._opener, "open", side_effect=AssertionError("unexpected network")), self.assertRaisesRegex(ValueError, "unknown journal"):
             pipeline.run(root / "new-output", ["not-a-journal"], registry)
         self.assertFalse((root / "new-output").exists())
 
@@ -164,7 +164,7 @@ class PipelineTests(unittest.TestCase):
 class TransportTests(unittest.TestCase):
     def test_auth_failure_is_not_retried_or_logged_with_secrets(self):
         error = urllib.error.HTTPError("https://example.invalid/?api_key=secret-value", 401, "secret-value", {}, None)
-        with patch.dict("os.environ", {"OPENALEX_API_KEY": "secret-value"}), patch.object(common, "_throttle"), patch("urllib.request.urlopen", side_effect=error) as request:
+        with patch.dict("os.environ", {"OPENALEX_API_KEY": "secret-value"}), patch.object(common, "_throttle"), patch.object(common._opener, "open", side_effect=error) as request:
             with self.assertRaises(common.APIError) as caught:
                 common.request_json("https://api.openalex.org/works/example", "openalex")
         self.assertEqual(request.call_count, 1)
@@ -173,7 +173,7 @@ class TransportTests(unittest.TestCase):
 
     def test_404_is_only_not_found_when_explicitly_allowed(self):
         error = urllib.error.HTTPError("https://example.invalid", 404, "not found", {}, None)
-        with patch.object(common, "_throttle"), patch("urllib.request.urlopen", side_effect=error):
+        with patch.object(common, "_throttle"), patch.object(common._opener, "open", side_effect=error):
             self.assertIsNone(common.request_json("https://api.openalex.org/works/example", "openalex", allow_not_found=True))
             with self.assertRaises(common.APIError):
                 common.request_json("https://api.semanticscholar.org/graph/v1/paper/batch", "semanticscholar")
@@ -181,7 +181,7 @@ class TransportTests(unittest.TestCase):
     def test_rate_limit_honors_retry_after(self):
         error = urllib.error.HTTPError("https://example.invalid", 429, "slow down", {"Retry-After": "120"}, None)
         response = io.BytesIO(b'{"ok": true}')
-        with patch.object(common, "_throttle"), patch("urllib.request.urlopen", side_effect=[error, response]), patch.object(common.time, "monotonic", return_value=1000):
+        with patch.object(common, "_throttle"), patch.object(common._opener, "open", side_effect=[error, response]), patch.object(common.time, "monotonic", return_value=1000):
             result = common.request_json("https://example.invalid", "test-provider")
         self.assertTrue(result["ok"])
         self.assertGreaterEqual(common._next["test-provider"], 1120)

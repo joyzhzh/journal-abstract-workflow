@@ -9,6 +9,16 @@ under the reserved `example.invalid` domain. This address is not a contact chann
 Examples and test abstracts are synthetic. Personal credentials are read only from
 environment variables. Local run folders are ignored by Git.
 
+The API transport rejects malformed keys without echoing their values and refuses
+redirects to a different host, port or scheme before sending another request.
+It permits redirects within the same HTTPS origin. This protects configured
+credentials from being forwarded to a different destination by a redirect.
+
+The default `runs/` folder, private preparation notes and recovery files are ignored.
+For a custom output directory, the runner creates a data/cache ignore file only if
+no `.gitignore` exists there; check your own ignore rules before committing outputs.
+Review notes and downloaded metadata can themselves contain identifying details.
+
 GitHub ownership and repository activity remain visible under the owning account
 if the repository is published. Anonymized contents and Git author fields do not
 hide the repository owner, pusher, or platform activity. Aggregate journal coverage

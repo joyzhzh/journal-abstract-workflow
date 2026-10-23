@@ -14,6 +14,9 @@ import json
 from pathlib import Path
 import sys
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from common import valid_semantic_scholar_paper
+
 FRONT_KINDS = {
     "author_bios", "front_back_matter", "call", "index", "correction",
     "reviewer_list", "test_record", "retraction", "book_review",
@@ -185,8 +188,14 @@ def audit_journal(root, slug):
                         raise ValueError("batch arrays required")
                     if len(ids) != len(responses):
                         error("source_cache_batch_length_mismatch", detail=source)
-                    pairs = [(doi, "response_present" if response else "null_response")
-                             for doi, response in zip(ids, responses)]
+                    pairs = []
+                    for doi, response in zip(ids, responses):
+                        if not valid_semantic_scholar_paper(response):
+                            error("source_cache_invalid_response", str(doi), source)
+                            status = "invalid_response"
+                        else:
+                            status = "null_response" if response is None else "response_present"
+                        pairs.append((doi, status))
                 else:
                     pairs = []
                     for line in handle:

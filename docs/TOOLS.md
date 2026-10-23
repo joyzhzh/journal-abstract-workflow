@@ -13,6 +13,7 @@ every publisher article is covered.
 | `scripts/fill_abstract_gaps.py` | Fill absent abstracts and attempt replacement of Crossref texts shorter than 30 words; prefer OpenAlex, then Semantic Scholar; screen candidates and apply explicit reading decisions | Saved Semantic Scholar batches, `abstract_gaps.csv`, source-labelled text fields, updated summary | Reusable collection script; the screen is a flagging aid |
 | `scripts/build_references.py` | Use deposited Crossref reference lists, otherwise OpenAlex referenced-work IDs; preserve each citing record and map duplicate registrations to a kept record | `references.csv.gz` and source/decade counts | Reusable optional reference stage |
 | `scripts/audit_outputs.py` | Inspect existing CSV consistency, duplicate targets, short-text fields, missing-text reasons and cache lookup status | JSON counts, errors, warnings and available input hashes | New portable extraction of checks used in the corpus validators |
+| `scripts/pipeline.py` and `scripts/run_recovery.py` | Select journals, run stages, restore completed tables after a failed attempt, refresh existing references and record the full combined population | `run_manifest.json`, `run_state.json` and retained `.history/` snapshots | Portable orchestration with failure and incremental-run regression tests |
 
 The four collection scripts use Python's standard library. The toolkit's shared
 configuration helper supplies portable settings; it is packaging work, not a new
@@ -61,6 +62,30 @@ provider's negative response. Historical quota statements in early working notes
 should not be treated as current API terms; check provider documentation for the
 environment in which a new run will operate.
 
+Both enrichment stages validate the fields they consume before trusting new or
+cached responses. Semantic Scholar batch `null` is an explicit miss; an error
+object or malformed projection is a failure to retry. Valid siblings from a mixed
+batch remain checkpointed. Before repairing an invalid cache, its exact bytes are
+retained in a content-addressed `history/` folder alongside it. Older Semantic
+Scholar projections without a returned DOI remain associated with the requested
+DOI; that association alone does not verify article identity.
+
+The runner snapshots selected journal tables and combined outputs before rebuilding.
+On an exception or ordinary interruption it moves incomplete outputs into the
+snapshot and restores the prior tables and manifest. Raw API checkpoints remain
+available for the retry. Recovery affects only generated files; authored reviews
+and notes remain in place, including edits made after a crash. On POSIX systems,
+a later run can recover an abandoned
+attempt after checking that its recorded process is gone. Other systems stop on
+an abandoned `running` state for manual recovery from the retained snapshot.
+These protections require the documented one-process-per-output-directory rule;
+they are not a general concurrent database or a backup against disk failure.
+
+The manifest distinguishes requested journals from every journal in the combined
+table and hashes their saved inputs, review decisions and derived files. Existing
+reference tables are rebuilt with their journal even when `--references` is omitted.
+Conflicting accept and reject decisions stop the run for correction.
+
 Publisher pages, printed issues, subscription full texts, Unpaywall and additional
 citation APIs were outside the documented saved-source work for the journal
 accounts inspected. This toolkit supplies no publisher/JSTOR scraper, browser
@@ -90,8 +115,8 @@ by the saved gap resolution, or `unreported` when no reason was saved.
 
 Where caches exist, it counts Crossref records, OpenAlex lookup statuses and
 Semantic Scholar null/present responses. It flags missing OpenAlex lookups, retryable
-errors, unlabelled statuses, repeated cache DOIs and mismatched Semantic Scholar
-batch lengths. A missing whole cache is an evidence warning; a source-labelled
+errors, unlabelled statuses, repeated cache DOIs, malformed Semantic Scholar
+responses and mismatched batch lengths. A missing whole cache is an evidence warning; a source-labelled
 field whose available cache has no usable entry is an inconsistency. Semantic
 Scholar need not have an entry for every record because it is a fallback source.
 

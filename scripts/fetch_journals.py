@@ -259,6 +259,8 @@ def load_review(corpus, slug):
                 raise ValueError(f"review.json contains an unsupported abstract source for {key}")
             normalized[key] = decision
         review[section] = normalized
+    if set(review["abstract_accepts"]) & set(review["abstract_rejections"]):
+        raise ValueError("review.json cannot accept and reject an abstract for the same DOI")
     return review
 
 

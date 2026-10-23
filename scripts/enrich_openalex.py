@@ -29,7 +29,8 @@ import urllib.parse
 from collections import Counter
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import APIError, normalize_doi, request_json, validate_slug
+from common import (APIError, normalize_doi, preserve_cache, request_json, validate_slug,
+                    valid_openalex_record, valid_openalex_work)
 
 SELECT = ("id,doi,display_name,publication_year,type,language,abstract_inverted_index,"
           "referenced_works,referenced_works_count,cited_by_count,primary_topic,authorships")
@@ -38,7 +39,7 @@ SELECT = ("id,doi,display_name,publication_year,type,language,abstract_inverted_
 def get(url):
     """Only HTTP 404 is cached as not_found; transport/auth failures stop this run."""
     response = request_json(url, "openalex", allow_not_found=True)
-    if response is not None and (not isinstance(response, dict) or not response.get("id")):
+    if response is not None and not valid_openalex_work(response):
         raise APIError("openalex: invalid work response; nothing cached")
     return ("ok" if response is not None else "not_found"), response, {}
 
@@ -66,12 +67,16 @@ def main(corpus, slug, offline, limit):
     with open(os.path.join(data_dir, "records.csv"), encoding="utf-8") as f:
         dois = [r["doi"] for r in csv.DictReader(f)]
     saved = {}
+    invalid_cache = False
     if os.path.exists(out_path):
         with gzip.open(out_path, "rt", encoding="utf-8") as f:
             for line in f:
                 rec = json.loads(line)
-                saved[rec["doi"]] = rec
-    todo = [d for d in dois if d not in saved or saved[d]["status"] == "error"]
+                if valid_openalex_record(rec):
+                    saved[rec["doi"]] = rec
+                else:
+                    invalid_cache = True  # preserve original bytes, retry the missing DOI
+    todo = [d for d in dois if d not in saved]
     if todo and offline:
         raise SystemExit(f"offline: {len(todo)} records have no saved OpenAlex response in {out_path}")
     if limit:
@@ -83,16 +88,30 @@ def main(corpus, slug, offline, limit):
         status, resp, headers = get(url)
         return doi, status, resp, headers.get("x-ratelimit-remaining") or headers.get("X-RateLimit-Remaining")
 
+    dirty = False
+
+    def checkpoint():
+        nonlocal invalid_cache, dirty
+        if invalid_cache:
+            preserve_cache(out_path)
+            invalid_cache = False
+        gz_write(out_path, (json.dumps(saved[d], ensure_ascii=False) for d in sorted(saved)))
+        dirty = False
+
     try:
         for i, requested_doi in enumerate(todo, 1):
             doi, status, resp, _ = lookup(requested_doi)
-            saved[doi] = {"doi": doi, "status": status, "response": resp}
+            record = {"doi": doi, "status": status, "response": resp}
+            if not valid_openalex_record(record):
+                raise APIError("openalex: invalid work response; nothing cached for this DOI")
+            saved[doi] = record
+            dirty = True
             if i % 25 == 0 or i == len(todo):
-                gz_write(out_path, (json.dumps(saved[d], ensure_ascii=False) for d in sorted(saved)))
+                checkpoint()
                 print(f"  {i}/{len(todo)} looked up", file=sys.stderr)
     finally:
-        if todo and saved:
-            gz_write(out_path, (json.dumps(saved[d], ensure_ascii=False) for d in sorted(saved)))
+        if dirty:
+            checkpoint()
 
     rows, stats = [], Counter()
     for doi in dois:

@@ -19,9 +19,13 @@ import build_references
 import enrich_openalex
 import fetch_journals
 import fill_abstract_gaps
+import run_recovery
 
 
 def run(output, journals, registry=None, offline=False, references=False):
+    journals = list(dict.fromkeys(journals))
+    if not journals:
+        raise ValueError("select at least one journal")
     entries = load_registry(registry)
     known = {entry["slug"]: entry for entry in entries}
     unknown = set(journals) - set(known)
@@ -33,32 +37,70 @@ def run(output, journals, registry=None, offline=False, references=False):
                          "; see the registry retrieval note and choose a supported journal")
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
+    existing = {path.parent.name for path in (output / "data").glob("*/records.csv")}
+    unregistered = existing - set(known)
+    if unregistered:
+        raise ValueError("existing output journals absent from this registry: " + ", ".join(sorted(unregistered)) +
+                         "; keep their registry entries or choose a new output directory")
+    ignore = output / ".gitignore"
+    if not ignore.exists():
+        ignore.write_text("data/\nraw/\n.history/\nrun_manifest.json\nrun_state.json*\n", encoding="utf-8")
+    state = run_recovery.begin(output, journals)
+    try:
+        run_stages(output, journals, entries, registry, offline, references)
+    except BaseException:
+        run_recovery.restore(output, state)
+        raise
+    state["status"] = "complete"
+    run_recovery.save_state(output, state)
+
+
+def run_stages(output, journals, entries, registry, offline, references):
+    known = {entry["slug"]: entry for entry in entries}
     fetch_journals.JOURNALS = entries
     fetch_journals.OFFLINE = offline
     fetch_journals.COMBINE_ONLY = False
     fetch_journals.NO_COMBINE = True
+    references_built = []
     for slug in journals:
+        # An existing reference table is part of this run's derived data, even when
+        # the optional switch is omitted on a later invocation.
+        make_references = references or (output / "data" / slug / "references.csv.gz").exists()
         fetch_journals.run_journal(known[slug], str(output))
         enrich_openalex.main(str(output), slug, offline, 0)
         fill_abstract_gaps.main(str(output), slug, offline)
-        if references:
+        if make_references:
             build_references.main(str(output), slug)
+            references_built.append(slug)
     fetch_journals.COMBINE_ONLY = True
     fetch_journals.NO_COMBINE = False
     fetch_journals.main(str(output), set(journals))
     # Relative paths only, with every saved response available to audit or replay.
+    combined = [entry["slug"] for entry in entries if (output / "data" / entry["slug"] / "records.csv").exists()]
     sources = {}
     for provider in ("crossref", "openalex", "semanticscholar"):
-        for slug in journals:
+        for slug in combined:
             folder = output / "raw" / provider / slug
             if folder.exists():
                 for path in sorted(folder.rglob("*")):
                     if path.is_file():
                         sources[str(path.relative_to(output))] = hashlib.sha256(path.read_bytes()).hexdigest()
-    manifest = {"workflow_version": "0.1", "journal_slugs": list(journals), "offline": offline,
-                "reference_stage": references, "registry_sha256": hashlib.sha256(Path(registry or DEFAULT_REGISTRY).read_bytes()).hexdigest(),
+    derived, decisions = {}, {}
+    for slug in combined:
+        for path in sorted((output / "data" / slug).iterdir()):
+            if path.is_file() and path.name in {"records.csv", "records.jsonl.gz", "summary.json", "abstract_gaps.csv", "openalex.csv", "references.csv.gz", "review.json"}:
+                target = decisions if path.name == "review.json" else derived
+                target[str(path.relative_to(output))] = hashlib.sha256(path.read_bytes()).hexdigest()
+    for path in [output / "data" / "journals_crossref.csv.gz", output / "data" / "summary.json"]:
+        derived[str(path.relative_to(output))] = hashlib.sha256(path.read_bytes()).hexdigest()
+    manifest = {"workflow_version": "0.2", "requested_journal_slugs": journals, "journal_slugs": combined, "offline": offline,
+                "reference_stage": bool(references_built), "reference_journals_rebuilt": references_built,
+                "registry_sha256": hashlib.sha256(Path(registry or DEFAULT_REGISTRY).read_bytes()).hexdigest(),
+                "registry_entries": [entry for entry in entries if entry["slug"] in combined],
+                "review_sha256": decisions, "derived_sha256": derived,
+                "tool_sha256": {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(Path(__file__).parent.glob("*.py"))},
                 "saved_source_sha256": sources,
-                "note": "Saved source files include any incomplete attempt snapshots; Crossref manifests identify active snapshots."}
+                "note": "The combined population includes existing registered journals; requested_journal_slugs identifies this invocation. Source files include incomplete attempt snapshots; Crossref manifests identify active snapshots. Raw responses and review decisions retain their own provenance."}
     (output / "run_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     print(f"Saved outputs: {output / 'data'}")
 

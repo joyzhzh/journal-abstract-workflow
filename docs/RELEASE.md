@@ -21,11 +21,19 @@ release. The original corpus and its private history are not distributed.
 
 ## Verification scope
 
-All **22 automated tests passed under Python 3.12.7**. The synthetic tests exercise extraction, source precedence, duplicate
+All **42 automated tests passed under Python 3.12.7**. The synthetic tests exercise extraction, source precedence, duplicate
 decisions, missing and short text, review overrides, wrong-DOI candidates, failure
 handling and offline replay. The demo produced 12 records, nine retained papers,
 six populated text fields and five fields of at least 30 words. Its output audit
 reported no errors or warnings.
+
+The [independent review](INDEPENDENT_REVIEW.md) found and reproduced credential
+handling, invalid-provider-response, failed-rerun, combined-provenance and stale
+reference-table issues. Fixes and regression tests are included. A separate replay
+rebuilt all 21 demonstrated journal tables, **84,446 records**, byte-identically
+from saved inputs. Its audit had zero errors or warnings; an independent check
+confirmed that the combined table equals their union. Real data and detailed
+review logs remain private.
 
 The final file scan found no known private identities, private repository links,
 local machine paths, access-token patterns or copied session identifiers. Relative
@@ -33,7 +41,8 @@ documentation links and Python syntax passed. This is a bounded release check,
 not a guarantee against identification from external information.
 
 Small live API checks on 23 October 2026 succeeded for a Crossref journal query
-and an OpenAlex DOI lookup. The anonymous Semantic Scholar batch probe returned
+and a real DOI through Crossref parsing, OpenAlex enrichment and abstract filling.
+The anonymous Semantic Scholar batch probe returned
 HTTP 429 (rate limited); a new successful live Semantic Scholar retrieval is not
 claimed. Its response parsing and fallback behavior are exercised offline.
 
@@ -51,6 +60,7 @@ full collection test.
 ## What remains and where to resume
 
 Review the [README](../README.md), [journal evidence](EVIDENCE.md), and
+[independent review](INDEPENDENT_REVIEW.md), including its
 [privacy boundaries](PRIVACY.md). The owning GitHub account remains visible by
 design; files and Git author fields use a neutral project identity.
 

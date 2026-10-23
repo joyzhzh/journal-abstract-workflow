@@ -54,7 +54,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import APIError, normalize_doi, request_json, validate_slug
+from common import (APIError, normalize_doi, preserve_cache, request_json, validate_slug,
+                    valid_openalex_record, valid_semantic_scholar_paper)
 from fetch_journals import load_review
 
 FILL_KINDS = {"article", "perspective", "crossroads", "commentary", "editorial"}
@@ -124,8 +125,8 @@ def load_openalex(corpus, slug):
     with gzip.open(path, "rt", encoding="utf-8") as f:
         for line in f:
             rec = json.loads(line)
-            if rec.get("status") != "error":  # a failed lookup counts as missing
-                oa[rec["doi"]] = rec["response"]
+            if valid_openalex_record(rec, allow_legacy=path == legacy):
+                oa[rec["doi"]] = rec["response"]  # invalid/error entries remain missing
     return oa, os.path.relpath(path, corpus)
 
 
@@ -185,35 +186,54 @@ def main(corpus, slug, offline):
     eligible = [r for r in gaps + short if r["kind_guess"] in FILL_KINDS and not r.get("duplicate_of") and r["doi"] not in rejections]
     need_s2 = [r["doi"] for r in eligible if (lambda t, fl: len(t.split()) < MIN_WORDS or fl)(*oa_candidate(r))]
 
-    s2 = {}
+    s2, invalid_s2 = {}, set()
     if os.path.exists(s2_path):
         with gzip.open(s2_path, "rb") as f:
             saved = json.loads(f.read())
+        if not isinstance(saved, dict) or not isinstance(saved.get("ids"), list) or not isinstance(saved.get("response"), list):
+            raise SystemExit("invalid Semantic Scholar cache: expected ID and response lists")
         if len(saved["ids"]) != len(saved["response"]):
             raise SystemExit("invalid Semantic Scholar cache: unequal IDs and responses")
-        s2 = {d: p for d, p in zip(saved["ids"], saved["response"])}
+        if any(not isinstance(d, str) or not d for d in saved["ids"]) or len(set(saved["ids"])) != len(saved["ids"]):
+            raise SystemExit("invalid Semantic Scholar cache: expected unique nonempty DOI strings")
+        for doi, paper in zip(saved["ids"], saved["response"]):
+            if valid_semantic_scholar_paper(paper):
+                s2[doi] = paper
+            else:
+                invalid_s2.add(doi)
+        if invalid_s2:
+            print(f"  {len(invalid_s2)} invalid cached Semantic Scholar responses remain missing; valid entries are reused", file=sys.stderr)
+    preserve_s2_before_write = bool(invalid_s2)
     missing = [d for d in need_s2 if d not in s2]
     if missing and offline:
         stop = [d for d in missing if d not in short_dois]
         if stop:
-            raise SystemExit(f"offline: {len(stop)} Semantic Scholar lookups missing from {s2_path}")
+            raise SystemExit(f"offline: {len(stop)} Semantic Scholar lookups missing or invalid in {s2_path}")
         missing = []  # a short Crossref text whose lookup was never saved is kept as it is
     for i in range(0, len(missing), S2_BATCH):
         chunk = missing[i:i + S2_BATCH]
         body = json.dumps({"ids": [f"DOI:{d}" for d in chunk]}).encode()
         resp = request("https://api.semanticscholar.org/graph/v1/paper/batch?fields=title,abstract,externalIds", data=body)
-        if not isinstance(resp, list) or len(resp) != len(chunk) or any(p is not None and not isinstance(p, dict) for p in resp):
+        if not isinstance(resp, list) or len(resp) != len(chunk):
             raise APIError("semanticscholar: invalid batch response; nothing from this batch cached")
-        for d, p in zip(chunk, resp):
+        valid = [(d, p) for d, p in zip(chunk, resp) if valid_semantic_scholar_paper(p)]
+        for d, p in valid:
             s2[d] = p
-        # Checkpoint each successful batch; a later failed batch cannot erase it.
-        os.makedirs(os.path.dirname(s2_path), exist_ok=True)
-        ids = sorted(s2)
-        temporary = s2_path + ".tmp"
-        with open(temporary, "wb") as raw:
-            with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as f:
-                f.write(json.dumps({"ids": ids, "response": [s2[d] for d in ids]}, ensure_ascii=False).encode())
-        os.replace(temporary, s2_path)
+        if valid:
+            # Keep useful siblings of a failed item, while leaving that item retryable.
+            # Preserve the exact original cache before repairing any invalid saved rows.
+            os.makedirs(os.path.dirname(s2_path), exist_ok=True)
+            if preserve_s2_before_write:
+                preserve_cache(s2_path)
+                preserve_s2_before_write = False
+            ids = sorted(s2)
+            temporary = s2_path + ".tmp"
+            with open(temporary, "wb") as raw:
+                with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0) as f:
+                    f.write(json.dumps({"ids": ids, "response": [s2[d] for d in ids]}, ensure_ascii=False).encode())
+            os.replace(temporary, s2_path)
+        if len(valid) != len(chunk):
+            raise APIError(f"semanticscholar: invalid paper responses in batch ({len(chunk) - len(valid)}); valid entries saved, unresolved entries will be retried")
         print(f"  Semantic Scholar {min(i + S2_BATCH, len(missing))}/{len(missing)}", file=sys.stderr)
 
 
@@ -258,9 +278,9 @@ def main(corpus, slug, offline):
             if is_short:
                 note = SHORT + "kept"
                 if doi not in s2:
-                    note += "; Semantic Scholar not looked up (offline run)"
+                    note += "; Semantic Scholar saved response invalid; retry needed (offline run)" if doi in invalid_s2 else "; Semantic Scholar not looked up (offline run)"
         elif is_short and doi not in s2:
-            resolution = SHORT + "kept: Semantic Scholar not looked up (offline run)"
+            resolution = SHORT + ("kept: Semantic Scholar saved response invalid; retry needed (offline run)" if doi in invalid_s2 else "kept: Semantic Scholar not looked up (offline run)")
         else:
             resolution = SHORT + "kept: no longer text found" if is_short else "no abstract found"
         overlap = title_overlap(r["title"], text) if text else ""
