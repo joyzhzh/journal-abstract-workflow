@@ -19,8 +19,8 @@ For a custom output directory, the runner creates a data/cache ignore file only 
 no `.gitignore` exists there; check your own ignore rules before committing outputs.
 Review notes and downloaded metadata can themselves contain identifying details.
 
-GitHub ownership and repository activity remain visible under the owning account
-if the repository is published. Anonymized contents and Git author fields do not
+GitHub ownership and repository activity are visible under the owning account
+in this public repository. Anonymized contents and Git author fields do not
 hide the repository owner, pusher, or platform activity. Aggregate journal coverage
 is retained to explain the evidence and limitations; such statistics can sometimes
 be matched to other published work. No claim of untraceable authorship is made.

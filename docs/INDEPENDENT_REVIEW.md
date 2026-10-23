@@ -1,8 +1,8 @@
 # Independent review — 23 October 2026
 
 Three separate reviewers examined privacy, failure behavior and real saved-response
-replay. They did not implement the fixes they reviewed. The repository remains a
-private draft; this report does not authorize publication.
+replay. They did not implement the fixes they reviewed. The review took place
+while the repository was private; the owner subsequently approved public release.
 
 The reviewers rechecked the fixes, including the additional recovery issue found
 during recheck. No unresolved actionable finding remained within the tested scope.

@@ -1,7 +1,7 @@
-# Private review draft — 23 October 2026
+# Public release — 23 October 2026
 
-Status: prepared for review in a private repository. Making it public requires
-the owner's explicit approval. No public release has been authorized.
+Status: approved for public release after independent review and correction of
+the findings. This release contains code, documentation and synthetic examples.
 
 ## What is included
 
@@ -57,14 +57,12 @@ was unavailable. This is disclosed in the journal catalog. The primary Crossref
 journal identifiers were checked for the 54 supported titles; that check is not a
 full collection test.
 
-## What remains and where to resume
+## Continuing from this release
 
 Review the [README](../README.md), [journal evidence](EVIDENCE.md), and
 [independent review](INDEPENDENT_REVIEW.md), including its
 [privacy boundaries](PRIVACY.md). The owning GitHub account remains visible by
 design; files and Git author fields use a neutral project identity.
 
-After explicit approval, update the draft-status text and change this repository's
-visibility to public. Until then, keep the repository private. For continued
-development, run the offline tests, use a new output directory for a new live
-snapshot, and keep harvested data outside tracked files.
+For continued development, run the offline tests, use a new output directory for
+a new live snapshot, and keep harvested data outside tracked files.

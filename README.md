@@ -10,9 +10,9 @@ The registry also identifies journals whose full pipeline has not been demonstra
 See [journal coverage](docs/JOURNALS.md) and [the evidence and its limits](docs/EVIDENCE.md).
 List membership, successful downloading, and abstract quality are separate claims.
 
-**Private review draft. Publication is pending owner approval.** This is a code and
-methods release with synthetic examples. It does not distribute the earlier abstract
-collection or its private history.
+**Public code and methods release.** Includes synthetic examples and independently
+reviewed tools. It does not distribute the earlier abstract collection or its
+private history.
 
 ## Try it offline
 
