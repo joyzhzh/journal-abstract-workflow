@@ -14,6 +14,8 @@ List membership, successful downloading, and abstract quality are separate claim
 reviewed tools. It does not distribute the earlier abstract collection or its
 private history.
 
+New here? See the [sharing message and quick-start guide](docs/SHARING_GUIDE.md).
+
 ## Try it offline
 
 Requires **Python 3.10 or newer**. There are no third-party Python dependencies and
