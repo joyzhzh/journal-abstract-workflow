@@ -1,0 +1,2155 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-23",
+  "scope_note": "Current UTD24 / FT50 union, historical FT50 removals, and one optional out-of-list demonstration. Default selection is the 19 historically demonstrated journals in the current union.",
+  "journals": [
+    {
+      "slug": "organization-science",
+      "title": "Organization Science",
+      "publisher": "INFORMS",
+      "issns": [
+        "1047-7039",
+        "1526-5455"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1047-7039",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Organization Science",
+        "queried_identifiers": [
+          {
+            "issn": "1047-7039",
+            "source": "https://api.crossref.org/journals/1047-7039",
+            "returned_title": "Organization Science",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-5455",
+            "source": "https://api.crossref.org/journals/1526-5455",
+            "returned_title": "Organization Science",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "management-science",
+      "title": "Management Science",
+      "publisher": "INFORMS",
+      "issns": [
+        "0025-1909",
+        "1526-5501"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0025-1909",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Management Science",
+        "queried_identifiers": [
+          {
+            "issn": "0025-1909",
+            "source": "https://api.crossref.org/journals/0025-1909",
+            "returned_title": "Management Science",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-5501",
+            "source": "https://api.crossref.org/journals/1526-5501",
+            "returned_title": "Management Science",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "operations-research",
+      "title": "Operations Research",
+      "publisher": "INFORMS",
+      "issns": [
+        "0030-364X",
+        "1526-5463",
+        "0096-3984"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0030-364X",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Operations Research",
+        "queried_identifiers": [
+          {
+            "issn": "0030-364X",
+            "source": "https://api.crossref.org/journals/0030-364X",
+            "returned_title": "Operations Research",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-5463",
+            "source": "https://api.crossref.org/journals/1526-5463",
+            "returned_title": "Operations Research",
+            "status": "ok"
+          },
+          {
+            "issn": "0096-3984",
+            "source": "https://api.crossref.org/journals/0096-3984",
+            "returned_title": "Journal of the Operations Research Society of America",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "predecessor_issns": [
+        "0096-3984"
+      ],
+      "identifier_note": "0096-3984 maps to Journal of the Operations Research Society of America. Crossref also reports 2326-3229 for that predecessor; it was not among the demonstrated queries and is not added silently."
+    },
+    {
+      "slug": "marketing-science",
+      "title": "Marketing Science",
+      "publisher": "INFORMS",
+      "issns": [
+        "0732-2399",
+        "1526-548X"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0732-2399",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Marketing Science",
+        "queried_identifiers": [
+          {
+            "issn": "0732-2399",
+            "source": "https://api.crossref.org/journals/0732-2399",
+            "returned_title": "Marketing Science",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-548X",
+            "source": "https://api.crossref.org/journals/1526-548X",
+            "returned_title": "Marketing Science",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "information-systems-research",
+      "title": "Information Systems Research",
+      "publisher": "INFORMS",
+      "issns": [
+        "1047-7047",
+        "1526-5536"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1047-7047",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Information Systems Research",
+        "queried_identifiers": [
+          {
+            "issn": "1047-7047",
+            "source": "https://api.crossref.org/journals/1047-7047",
+            "returned_title": "Information Systems Research",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-5536",
+            "source": "https://api.crossref.org/journals/1526-5536",
+            "returned_title": "Information Systems Research",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "msom",
+      "title": "Manufacturing & Service Operations Management",
+      "publisher": "INFORMS",
+      "issns": [
+        "1523-4614",
+        "1526-5498",
+        "1526-5489"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1523-4614",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Manufacturing & Service Operations Management",
+        "queried_identifiers": [
+          {
+            "issn": "1523-4614",
+            "source": "https://api.crossref.org/journals/1523-4614",
+            "returned_title": "Manufacturing & Service Operations Management",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-5498",
+            "source": "https://api.crossref.org/journals/1526-5498",
+            "returned_title": "Manufacturing & Service Operations Management",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-5489",
+            "source": "https://api.crossref.org/journals/1526-5489",
+            "returned_title": "Manufacturing & Service Operations Management",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "issn_checksum_exceptions": {
+        "1526-5489": "Fails the ISSN checksum, but Crossref recognizes this query alias and returns the matching journal. Retained to preserve the demonstrated query profile; do not describe as a canonical ISSN."
+      }
+    },
+    {
+      "slug": "strategy-science",
+      "title": "Strategy Science",
+      "publisher": "INFORMS",
+      "issns": [
+        "2333-2050",
+        "2333-2077"
+      ],
+      "utd24": false,
+      "ft50_2016": false,
+      "ft50_2026": false,
+      "default": false,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/2333-2050",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Strategy Science",
+        "queried_identifiers": [
+          {
+            "issn": "2333-2050",
+            "source": "https://api.crossref.org/journals/2333-2050",
+            "returned_title": "Strategy Science",
+            "status": "ok"
+          },
+          {
+            "issn": "2333-2077",
+            "source": "https://api.crossref.org/journals/2333-2077",
+            "returned_title": "Strategy Science",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "administrative-science-quarterly",
+      "title": "Administrative Science Quarterly",
+      "publisher": "SAGE",
+      "issns": [
+        "0001-8392",
+        "1930-3815"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0001-8392",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Administrative Science Quarterly",
+        "queried_identifiers": [
+          {
+            "issn": "0001-8392",
+            "source": "https://api.crossref.org/journals/0001-8392",
+            "returned_title": "Administrative Science Quarterly",
+            "status": "ok"
+          },
+          {
+            "issn": "1930-3815",
+            "source": "https://api.crossref.org/journals/1930-3815",
+            "returned_title": "Administrative Science Quarterly",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "academy-of-management-journal",
+      "title": "Academy of Management Journal",
+      "publisher": "Academy of Management",
+      "issns": [
+        "0001-4273",
+        "1948-0989"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0001-4273",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Academy of Management Journal",
+        "queried_identifiers": [
+          {
+            "issn": "0001-4273",
+            "source": "https://api.crossref.org/journals/0001-4273",
+            "returned_title": "Academy of Management Journal",
+            "status": "ok"
+          },
+          {
+            "issn": "1948-0989",
+            "source": "https://api.crossref.org/journals/1948-0989",
+            "returned_title": "Academy of Management Journal",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "academy-of-management-review",
+      "title": "Academy of Management Review",
+      "publisher": "Academy of Management",
+      "issns": [
+        "0363-7425",
+        "1930-3807"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0363-7425",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Academy of Management Review",
+        "queried_identifiers": [
+          {
+            "issn": "0363-7425",
+            "source": "https://api.crossref.org/journals/0363-7425",
+            "returned_title": "Academy of Management Review",
+            "status": "ok"
+          },
+          {
+            "issn": "1930-3807",
+            "source": "https://api.crossref.org/journals/1930-3807",
+            "returned_title": "Academy of Management Review",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "strategic-management-journal",
+      "title": "Strategic Management Journal",
+      "publisher": "Wiley",
+      "issns": [
+        "0143-2095",
+        "1097-0266"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0143-2095",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Strategic Management Journal",
+        "queried_identifiers": [
+          {
+            "issn": "0143-2095",
+            "source": "https://api.crossref.org/journals/0143-2095",
+            "returned_title": "Strategic Management Journal",
+            "status": "ok"
+          },
+          {
+            "issn": "1097-0266",
+            "source": "https://api.crossref.org/journals/1097-0266",
+            "returned_title": "Strategic Management Journal",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "journal-of-international-business-studies",
+      "title": "Journal of International Business Studies",
+      "publisher": "Springer",
+      "issns": [
+        "0047-2506",
+        "1478-6990",
+        "0047-8210"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0047-2506",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of International Business Studies",
+        "queried_identifiers": [
+          {
+            "issn": "0047-2506",
+            "source": "https://api.crossref.org/journals/0047-2506",
+            "returned_title": "Journal of International Business Studies",
+            "status": "ok"
+          },
+          {
+            "issn": "1478-6990",
+            "source": "https://api.crossref.org/journals/1478-6990",
+            "returned_title": "Journal of International Business Studies",
+            "status": "ok"
+          },
+          {
+            "issn": "0047-8210",
+            "source": "https://api.crossref.org/journals/0047-8210",
+            "returned_title": "Journal of International Business Studies",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "academy-of-management-annals",
+      "title": "Academy of Management Annals",
+      "publisher": "Academy of Management",
+      "issns": [
+        "1941-6520",
+        "1941-6067"
+      ],
+      "utd24": false,
+      "ft50_2016": false,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1941-6520",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Academy of Management Annals",
+        "queried_identifiers": [
+          {
+            "issn": "1941-6520",
+            "source": "https://api.crossref.org/journals/1941-6520",
+            "returned_title": "Academy of Management Annals",
+            "status": "ok"
+          },
+          {
+            "issn": "1941-6067",
+            "source": "https://api.crossref.org/journals/1941-6067",
+            "returned_title": "Academy of Management Annals",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "journal-of-management",
+      "title": "Journal of Management",
+      "publisher": "SAGE",
+      "issns": [
+        "0149-2063",
+        "1557-1211"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0149-2063",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Management",
+        "queried_identifiers": [
+          {
+            "issn": "0149-2063",
+            "source": "https://api.crossref.org/journals/0149-2063",
+            "returned_title": "Journal of Management",
+            "status": "ok"
+          },
+          {
+            "issn": "1557-1211",
+            "source": "https://api.crossref.org/journals/1557-1211",
+            "returned_title": "Journal of Management",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "journal-of-management-studies",
+      "title": "Journal of Management Studies",
+      "publisher": "Wiley",
+      "issns": [
+        "0022-2380",
+        "1467-6486"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0022-2380",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Management Studies",
+        "queried_identifiers": [
+          {
+            "issn": "0022-2380",
+            "source": "https://api.crossref.org/journals/0022-2380",
+            "returned_title": "Journal of Management Studies",
+            "status": "ok"
+          },
+          {
+            "issn": "1467-6486",
+            "source": "https://api.crossref.org/journals/1467-6486",
+            "returned_title": "Journal of Management Studies",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "strategic-entrepreneurship-journal",
+      "title": "Strategic Entrepreneurship Journal",
+      "publisher": "Wiley",
+      "issns": [
+        "1932-4391",
+        "1932-443X"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1932-4391",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Strategic Entrepreneurship Journal",
+        "queried_identifiers": [
+          {
+            "issn": "1932-4391",
+            "source": "https://api.crossref.org/journals/1932-4391",
+            "returned_title": "Strategic Entrepreneurship Journal",
+            "status": "ok"
+          },
+          {
+            "issn": "1932-443X",
+            "source": "https://api.crossref.org/journals/1932-443X",
+            "returned_title": "Strategic Entrepreneurship Journal",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "journal-of-business-venturing",
+      "title": "Journal of Business Venturing",
+      "publisher": "Elsevier",
+      "issns": [
+        "0883-9026"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0883-9026",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Business Venturing",
+        "queried_identifiers": [
+          {
+            "issn": "0883-9026",
+            "source": "https://api.crossref.org/journals/0883-9026",
+            "returned_title": "Journal of Business Venturing",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "entrepreneurship-theory-and-practice",
+      "title": "Entrepreneurship Theory and Practice",
+      "publisher": "SAGE",
+      "issns": [
+        "1042-2587",
+        "1540-8520",
+        "1540-6520",
+        "0363-9428"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1042-2587",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Entrepreneurship Theory and Practice",
+        "queried_identifiers": [
+          {
+            "issn": "1042-2587",
+            "source": "https://api.crossref.org/journals/1042-2587",
+            "returned_title": "Entrepreneurship Theory and Practice",
+            "status": "ok"
+          },
+          {
+            "issn": "1540-8520",
+            "source": "https://api.crossref.org/journals/1540-8520",
+            "returned_title": "Entrepreneurship Theory and Practice",
+            "status": "ok"
+          },
+          {
+            "issn": "1540-6520",
+            "source": "https://api.crossref.org/journals/1540-6520",
+            "returned_title": "Entrepreneurship Theory and Practice",
+            "status": "ok"
+          },
+          {
+            "issn": "0363-9428",
+            "source": "https://api.crossref.org/journals/0363-9428",
+            "returned_title": "American Journal of Small Business",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "predecessor_issns": [
+        "0363-9428"
+      ],
+      "identifier_note": "0363-9428 maps to American Journal of Small Business. Historical/predecessor records remain part of this explicit profile.",
+      "issn_checksum_exceptions": {
+        "1540-8520": "Fails the ISSN checksum, but Crossref recognizes this query alias and returns the matching journal. Retained to preserve the demonstrated query profile; do not describe as a canonical ISSN."
+      }
+    },
+    {
+      "slug": "research-policy",
+      "title": "Research Policy",
+      "publisher": "Elsevier",
+      "issns": [
+        "0048-7333"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0048-7333",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Research Policy",
+        "queried_identifiers": [
+          {
+            "issn": "0048-7333",
+            "source": "https://api.crossref.org/journals/0048-7333",
+            "returned_title": "Research Policy",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "organization-studies",
+      "title": "Organization Studies",
+      "publisher": "SAGE",
+      "issns": [
+        "0170-8406",
+        "1741-3044"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": false,
+      "default": false,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0170-8406",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Organization Studies",
+        "queried_identifiers": [
+          {
+            "issn": "0170-8406",
+            "source": "https://api.crossref.org/journals/0170-8406",
+            "returned_title": "Organization Studies",
+            "status": "ok"
+          },
+          {
+            "issn": "1741-3044",
+            "source": "https://api.crossref.org/journals/1741-3044",
+            "returned_title": "Organization Studies",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "american-sociological-review",
+      "title": "American Sociological Review",
+      "publisher": "SAGE",
+      "issns": [
+        "0003-1224",
+        "1939-8271"
+      ],
+      "utd24": false,
+      "ft50_2016": false,
+      "ft50_2026": true,
+      "default": true,
+      "evidence_status": "historically_demonstrated",
+      "tested_snapshot": "2026-10-23",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0003-1224",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "American Sociological Review",
+        "queried_identifiers": [
+          {
+            "issn": "0003-1224",
+            "source": "https://api.crossref.org/journals/0003-1224",
+            "returned_title": "American Sociological Review",
+            "status": "ok"
+          },
+          {
+            "issn": "1939-8271",
+            "source": "https://api.crossref.org/journals/1939-8271",
+            "returned_title": "American Sociological Review",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ]
+    },
+    {
+      "slug": "informs-journal-on-computing",
+      "title": "INFORMS Journal on Computing",
+      "publisher": "INFORMS",
+      "issns": [
+        "1091-9856",
+        "1526-5528",
+        "0899-1499",
+        "2326-3245"
+      ],
+      "utd24": true,
+      "ft50_2016": false,
+      "ft50_2026": false,
+      "default": false,
+      "evidence_status": "crossref_snapshot_only",
+      "tested_snapshot": "2026-10-22",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1091-9856",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "INFORMS Journal on Computing",
+        "queried_identifiers": [
+          {
+            "issn": "1091-9856",
+            "source": "https://api.crossref.org/journals/1091-9856",
+            "returned_title": "INFORMS Journal on Computing",
+            "status": "ok"
+          },
+          {
+            "issn": "1526-5528",
+            "source": "https://api.crossref.org/journals/1526-5528",
+            "returned_title": "INFORMS Journal on Computing",
+            "status": "ok"
+          },
+          {
+            "issn": "0899-1499",
+            "source": "https://api.crossref.org/journals/0899-1499",
+            "returned_title": "INFORMS Journal on Computing",
+            "status": "ok"
+          },
+          {
+            "issn": "2326-3245",
+            "source": "https://api.crossref.org/journals/2326-3245",
+            "returned_title": "INFORMS Journal on Computing",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "identifier_note": "Includes predecessor registrations under ORSA Journal on Computing."
+    },
+    {
+      "slug": "the-accounting-review",
+      "title": "The Accounting Review",
+      "publisher": "American Accounting Association",
+      "issns": [
+        "0001-4826",
+        "1558-7967"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0001-4826",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "The Accounting Review",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0001-4826",
+            "source": "https://api.crossref.org/journals/0001-4826",
+            "returned_title": "The Accounting Review",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "accounting-organizations-and-society",
+      "title": "Accounting, Organizations and Society",
+      "publisher": "Elsevier",
+      "issns": [
+        "0361-3682"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0361-3682",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Accounting Organizations and Society",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0361-3682",
+            "source": "https://api.crossref.org/journals/0361-3682",
+            "returned_title": "Accounting Organizations and Society",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "american-economic-review",
+      "title": "American Economic Review",
+      "publisher": "American Economic Association",
+      "issns": [
+        "0002-8282",
+        "1944-7981"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0002-8282",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "American Economic Review",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0002-8282",
+            "source": "https://api.crossref.org/journals/0002-8282",
+            "returned_title": "American Economic Review",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "contemporary-accounting-research",
+      "title": "Contemporary Accounting Research",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "issns": [
+        "0823-9150",
+        "1911-3846"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0823-9150",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Contemporary Accounting Research",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0823-9150",
+            "source": "https://api.crossref.org/journals/0823-9150",
+            "returned_title": "Contemporary Accounting Research",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "econometrica",
+      "title": "Econometrica",
+      "publisher": "The Econometric Society",
+      "issns": [
+        "0012-9682",
+        "1468-0262"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0012-9682",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Econometrica",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0012-9682",
+            "source": "https://api.crossref.org/journals/0012-9682",
+            "returned_title": "Econometrica",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "harvard-business-review",
+      "title": "Harvard Business Review",
+      "publisher": "Harvard Business Review",
+      "issns": [
+        "0017-8012"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "unsupported_crossref_route",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "status": "verified_issn_portal",
+        "source": "https://portal.issn.org/resource/issn/0017-8012",
+        "returned_title": "Harvard business review",
+        "note": "ISSN verified; Crossref journal endpoint returned HTTP 404. This ISSN-driven workflow cannot currently enumerate the journal."
+      },
+      "retrieval_available": false,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "retrieval_note": "Listed for scope completeness. No usable Crossref journal endpoint was found for this ISSN; not a claim that the publication has no DOIs anywhere."
+    },
+    {
+      "slug": "human-resource-management",
+      "title": "Human Resource Management",
+      "publisher": "Wiley (John Wiley & Sons)",
+      "issns": [
+        "0090-4848",
+        "1099-050X"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0090-4848",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Human Resource Management",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0090-4848",
+            "source": "https://api.crossref.org/journals/0090-4848",
+            "returned_title": "Human Resource Management",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-accounting-and-economics",
+      "title": "Journal of Accounting and Economics",
+      "publisher": "Elsevier",
+      "issns": [
+        "0165-4101"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0165-4101",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Accounting and Economics",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0165-4101",
+            "source": "https://api.crossref.org/journals/0165-4101",
+            "returned_title": "Journal of Accounting and Economics",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-accounting-research",
+      "title": "Journal of Accounting Research",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "issns": [
+        "0021-8456",
+        "1475-679X"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0021-8456",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Accounting Research",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0021-8456",
+            "source": "https://api.crossref.org/journals/0021-8456",
+            "returned_title": "Journal of Accounting Research",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-applied-psychology",
+      "title": "Journal of Applied Psychology",
+      "publisher": "American Psychological Association",
+      "issns": [
+        "0021-9010",
+        "1939-1854"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0021-9010",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Applied Psychology",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0021-9010",
+            "source": "https://api.crossref.org/journals/0021-9010",
+            "returned_title": "Journal of Applied Psychology",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-consumer-psychology",
+      "title": "Journal of Consumer Psychology",
+      "publisher": "Wiley (John Wiley & Sons)",
+      "issns": [
+        "1057-7408",
+        "1532-7663"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1057-7408",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Consumer Psychology",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "1057-7408",
+            "source": "https://api.crossref.org/journals/1057-7408",
+            "returned_title": "Journal of Consumer Psychology",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-consumer-research",
+      "title": "Journal of Consumer Research",
+      "publisher": "Oxford University Press",
+      "issns": [
+        "0093-5301",
+        "1537-5277"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0093-5301",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Consumer Research",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0093-5301",
+            "source": "https://api.crossref.org/journals/0093-5301",
+            "returned_title": "Journal of Consumer Research",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-finance",
+      "title": "Journal of Finance",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "issns": [
+        "0022-1082",
+        "1540-6261"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0022-1082",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "The Journal of Finance",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0022-1082",
+            "source": "https://api.crossref.org/journals/0022-1082",
+            "returned_title": "The Journal of Finance",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-financial-and-quantitative-analysis",
+      "title": "Journal of Financial and Quantitative Analysis",
+      "publisher": "Cambridge University Press",
+      "issns": [
+        "0022-1090",
+        "1756-6916"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0022-1090",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Financial and Quantitative Analysis",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0022-1090",
+            "source": "https://api.crossref.org/journals/0022-1090",
+            "returned_title": "Journal of Financial and Quantitative Analysis",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-financial-economics",
+      "title": "Journal of Financial Economics",
+      "publisher": "Elsevier",
+      "issns": [
+        "0304-405X"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0304-405X",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Financial Economics",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0304-405X",
+            "source": "https://api.crossref.org/journals/0304-405X",
+            "returned_title": "Journal of Financial Economics",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-management-information-systems",
+      "title": "Journal of Management Information Systems",
+      "publisher": "Informa UK (Taylor & Francis)",
+      "issns": [
+        "0742-1222",
+        "1557-928X"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0742-1222",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Management Information Systems",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0742-1222",
+            "source": "https://api.crossref.org/journals/0742-1222",
+            "returned_title": "Journal of Management Information Systems",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-marketing",
+      "title": "Journal of Marketing",
+      "publisher": "SAGE Publications",
+      "issns": [
+        "0022-2429",
+        "1547-7185"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0022-2429",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Marketing",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0022-2429",
+            "source": "https://api.crossref.org/journals/0022-2429",
+            "returned_title": "Journal of Marketing",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-marketing-research",
+      "title": "Journal of Marketing Research",
+      "publisher": "SAGE Publications",
+      "issns": [
+        "0022-2437",
+        "1547-7193"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0022-2437",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Marketing Research",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0022-2437",
+            "source": "https://api.crossref.org/journals/0022-2437",
+            "returned_title": "Journal of Marketing Research",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-operations-management",
+      "title": "Journal of Operations Management",
+      "publisher": "Wiley (Blackwell Publishing)",
+      "issns": [
+        "0272-6963",
+        "1873-1317"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0272-6963",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Operations Management",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0272-6963",
+            "source": "https://api.crossref.org/journals/0272-6963",
+            "returned_title": "Journal of Operations Management",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-political-economy",
+      "title": "Journal of Political Economy",
+      "publisher": "The University of Chicago Press",
+      "issns": [
+        "0022-3808",
+        "1537-534X"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0022-3808",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Political Economy",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0022-3808",
+            "source": "https://api.crossref.org/journals/0022-3808",
+            "returned_title": "Journal of Political Economy",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-the-academy-of-marketing-science",
+      "title": "Journal of the Academy of Marketing Science",
+      "publisher": "Springer-Verlag",
+      "issns": [
+        "0092-0703",
+        "1552-7824"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0092-0703",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of the Academy of Marketing Science",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0092-0703",
+            "source": "https://api.crossref.org/journals/0092-0703",
+            "returned_title": "Journal of the Academy of Marketing Science",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "mis-quarterly",
+      "title": "MIS Quarterly",
+      "publisher": "MIS Quarterly",
+      "issns": [
+        "0276-7783",
+        "2162-9730"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0276-7783",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "MIS Quarterly",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0276-7783",
+            "source": "https://api.crossref.org/journals/0276-7783",
+            "returned_title": "MIS Quarterly",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "mit-sloan-management-review",
+      "title": "MIT Sloan Management Review",
+      "publisher": "MIT Sloan School of Management",
+      "issns": [
+        "1532-8937",
+        "1532-9194"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1532-9194",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "MIT Sloan Management Review",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "1532-9194",
+            "source": "https://api.crossref.org/journals/1532-9194",
+            "returned_title": "MIT Sloan Management Review",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "organizational-behavior-and-human-decision-processes",
+      "title": "Organizational Behavior and Human Decision Processes",
+      "publisher": "Elsevier",
+      "issns": [
+        "0749-5978",
+        "1095-9920"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0749-5978",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Organizational Behavior and Human Decision Processes",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0749-5978",
+            "source": "https://api.crossref.org/journals/0749-5978",
+            "returned_title": "Organizational Behavior and Human Decision Processes",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "production-and-operations-management",
+      "title": "Production and Operations Management",
+      "publisher": "SAGE Publications",
+      "issns": [
+        "1059-1478",
+        "1937-5956"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1059-1478",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Production and Operations Management",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "1059-1478",
+            "source": "https://api.crossref.org/journals/1059-1478",
+            "returned_title": "Production and Operations Management",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "psychological-science",
+      "title": "Psychological Science",
+      "publisher": "SAGE Publications",
+      "issns": [
+        "0956-7976",
+        "1467-9280"
+      ],
+      "utd24": false,
+      "ft50_2016": false,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0956-7976",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Psychological Science",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0956-7976",
+            "source": "https://api.crossref.org/journals/0956-7976",
+            "returned_title": "Psychological Science",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "quarterly-journal-of-economics",
+      "title": "Quarterly Journal of Economics",
+      "publisher": "Oxford University Press",
+      "issns": [
+        "0033-5533",
+        "1531-4650"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0033-5533",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "The Quarterly Journal of Economics",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0033-5533",
+            "source": "https://api.crossref.org/journals/0033-5533",
+            "returned_title": "The Quarterly Journal of Economics",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "review-of-accounting-studies",
+      "title": "Review of Accounting Studies",
+      "publisher": "Springer-Verlag",
+      "issns": [
+        "1380-6653",
+        "1573-7136"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1380-6653",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Review of Accounting Studies",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "1380-6653",
+            "source": "https://api.crossref.org/journals/1380-6653",
+            "returned_title": "Review of Accounting Studies",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "review-of-economic-studies",
+      "title": "Review of Economic Studies",
+      "publisher": "Oxford University Press",
+      "issns": [
+        "0034-6527",
+        "1467-937X"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0034-6527",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "The Review of Economic Studies",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0034-6527",
+            "source": "https://api.crossref.org/journals/0034-6527",
+            "returned_title": "The Review of Economic Studies",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "review-of-finance",
+      "title": "Review of Finance",
+      "publisher": "Oxford University Press",
+      "issns": [
+        "1572-3097",
+        "1573-692X",
+        "1875-824X"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/1572-3097",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Review of Finance",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "1572-3097",
+            "source": "https://api.crossref.org/journals/1572-3097",
+            "returned_title": "Review of Finance",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "review-of-financial-studies",
+      "title": "Review of Financial Studies",
+      "publisher": "Oxford University Press",
+      "issns": [
+        "0893-9454",
+        "1465-7368"
+      ],
+      "utd24": true,
+      "ft50_2016": true,
+      "ft50_2026": true,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0893-9454",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Review of Financial Studies",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0893-9454",
+            "source": "https://api.crossref.org/journals/0893-9454",
+            "returned_title": "Review of Financial Studies",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "human-relations",
+      "title": "Human Relations",
+      "publisher": "SAGE Publications",
+      "issns": [
+        "0018-7267",
+        "1741-282X"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": false,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0018-7267",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Human Relations",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0018-7267",
+            "source": "https://api.crossref.org/journals/0018-7267",
+            "returned_title": "Human Relations",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    },
+    {
+      "slug": "journal-of-business-ethics",
+      "title": "Journal of Business Ethics",
+      "publisher": "Springer-Verlag",
+      "issns": [
+        "0167-4544",
+        "1573-0697"
+      ],
+      "utd24": false,
+      "ft50_2016": true,
+      "ft50_2026": false,
+      "default": false,
+      "evidence_status": "configured_only",
+      "identifier_evidence": {
+        "checked": "2026-10-23",
+        "source": "https://api.crossref.org/journals/0167-4544",
+        "status": "verified_crossref_journal_endpoint",
+        "returned_title": "Journal of Business Ethics",
+        "note": "Crossref returned identifiers; no full journal fetch or abstract retrieval has been demonstrated here.",
+        "queried_identifiers": [
+          {
+            "issn": "0167-4544",
+            "source": "https://api.crossref.org/journals/0167-4544",
+            "returned_title": "Journal of Business Ethics",
+            "status": "ok"
+          }
+        ]
+      },
+      "retrieval_available": true,
+      "membership_sources": [
+        "utd24",
+        "ft50_2016",
+        "ft50_2026"
+      ],
+      "tested_snapshot": null
+    }
+  ],
+  "list_sources": {
+    "utd24": {
+      "url": "https://jsom.utdallas.edu/the-utd-top-100-business-school-research-rankings/list-of-journals",
+      "checked": "2026-10-23",
+      "verification": "All 24 titles read in the search-indexed official UT Dallas page. Direct page retrieval timed out."
+    },
+    "ft50_2026": {
+      "url": "https://www.ft.com/ft50-journals",
+      "checked": "2026-10-23",
+      "verification": "Official short URL returned HTTP 404; 50-title revised list corroborated against the CEIBS institutional library list dated 2026-04-29. Direct FT primary verification remains unavailable.",
+      "corroborating_url": "https://ceibs.libguides.com/c.php?g=963339&p=7006421"
+    },
+    "ft50_2016": {
+      "url": "https://www.ft.com/content/3405a512-5cbb-11e1-8f1f-00144feabdc0",
+      "checked": "2026-10-23",
+      "verification": "Official page is paywalled. Historical membership reconciled against the University of Hong Kong library transcription and the three 2026 additions/removals.",
+      "corroborating_url": "https://libguides.lib.hku.hk/c.php?g=766106&p=6758018"
+    }
+  }
+}

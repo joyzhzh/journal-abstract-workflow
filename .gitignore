@@ -1,0 +1,16 @@
+# Retrieved material and local research decisions stay out of this code release.
+/runs/
+/raw/
+/data/
+/logs/
+/.local/
+/.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log
+*.pem
+*.key

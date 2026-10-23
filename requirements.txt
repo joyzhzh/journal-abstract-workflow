@@ -1,0 +1,1 @@
+# Python 3.10 or newer. All runtime and test dependencies are in the standard library.
